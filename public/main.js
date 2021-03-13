@@ -5,14 +5,10 @@ var mainState = {
         game.load.image('ground', './cm_ground.png');
         game.load.image('obstacle', './washpile.png');
         game.load.spritesheet('character', './ruth.png', 160, 160, 4);
-        game.load.audio('music', './ruth.mp3');
     },
     
     // create and initialise the game objects and settings
     create: function() {
-        music = game.add.audio('music');
-        music.play();
-
         ground = game.add.sprite(0, 372, 'ground');
         game.physics.arcade.enable(ground);
         ground.body.immovable = true;
@@ -77,7 +73,6 @@ var mainState = {
      
 };
 
-var width = window.width;
 var game = new Phaser.Game(1000,500);
 
 game.state.add('main', mainState,Phaser.AUTO,'gameDIV');
