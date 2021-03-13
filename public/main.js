@@ -32,6 +32,10 @@ var mainState = {
         player.body.gravity.y = 500;
 
         speed = 5;
+
+        game.input.onTap.add(function() {
+            player.body.velocity.y = -500;
+        }, this);
     },
     
     // runs continuously at 60 frames per second
@@ -71,6 +75,7 @@ var mainState = {
      
 };
 
+var width = window.width;
 var game = new Phaser.Game(1000,500);
 
 game.state.add('main', mainState,Phaser.AUTO,'gameDIV');
