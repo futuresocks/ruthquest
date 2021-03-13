@@ -34,7 +34,9 @@ var mainState = {
         speed = 5;
 
         game.input.onTap.add(function() {
-            player.body.velocity.y = -500;
+            if (player.body.touching.down) {
+                player.body.velocity.y = -500;
+            }
         }, this);
     },
     
