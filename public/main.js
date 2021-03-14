@@ -3,7 +3,7 @@ var mainState = {
     // preload all of the graphics and sounds
     preload: function() {
         game.load.image('background', './cinnamons.jpg');
-        game.load.image('ground', './cm_ground.png');
+        game.load.image('ground', './ground.png');
         game.load.image('obstacle', './washpile.png');
         game.load.spritesheet('character', './ruth.png', 160, 160, 4);
     },
@@ -23,7 +23,7 @@ var mainState = {
         barrier = game.add.sprite(900, 330, 'obstacle');
         game.physics.arcade.enable(barrier);
 
-        player = game.add.sprite(150, 150, 'character');
+        player = game.add.sprite(150, 210, 'character');
         walk = player.animations.add('walk');
         player.animations.play('walk', 8, true);
 
