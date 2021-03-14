@@ -2,6 +2,7 @@ var mainState = {
     
     // preload all of the graphics and sounds
     preload: function() {
+        game.load.image('background', './cinnamons.jpg');
         game.load.image('ground', './cm_ground.png');
         game.load.image('obstacle', './washpile.png');
         game.load.spritesheet('character', './ruth.png', 160, 160, 4);
@@ -9,6 +10,8 @@ var mainState = {
     
     // create and initialise the game objects and settings
     create: function() {
+        background = game.add.sprite(0, 0, 'background');
+
         ground = game.add.sprite(0, 372, 'ground');
         game.physics.arcade.enable(ground);
         ground.body.immovable = true;
@@ -38,6 +41,9 @@ var mainState = {
     
     // runs continuously at 60 frames per second
     update: function() {
+        game.scale.pageAlignHorizontally = true;
+        game.scale.pageAlignVertically = true;
+        
         //collisions section
         game.physics.arcade.collide(player, ground);
         game.physics.arcade.collide(player, ground2);
